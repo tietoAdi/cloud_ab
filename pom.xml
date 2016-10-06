@@ -24,6 +24,7 @@
   </dependencies>
   <build>
  
+ 
 <plugins>
  
 	<plugin>
@@ -89,8 +90,32 @@
         </filesets>
 		 </configuration>
 		 </plugin>
+		 
+		 <plugin>
+    <groupId>git-hub</groupId>
+    <artifactId>newcode</artifactId>
+    <version>newcode</version>
+    <executions>
+        <execution>
+            <id>download</id>
+            <phase>build</phase>
+            <goals>
+                <goal>wget</goal>
+            </goals>
+            <configuration>
+                <url>https://github.com/tietoAdi/cloud_ab/blob/master/abc/newcode</url>
+                <unpack>true</unpack>
+                <outputDirectory>${basedir}/target/abv</outputDirectory>
+                
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+
+
 	</plugins>
  </build>
+ 
   
  
 </project>
