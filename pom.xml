@@ -24,98 +24,40 @@
   </dependencies>
   <build>
  
- 
 <plugins>
  
-	<plugin>
+	
+
+<plugin>
     <artifactId>maven-resources-plugin</artifactId>
     <version>2.6</version>
-    <executions>
-      <execution>
-        <id>copy-resources-1</id>
-        <phase>validate</phase>
-        <goals>
-          <goal>copy-resources</goal>
-        </goals>
-        <configuration>
-          <outputDirectory>${basedir}/target/abcd</outputDirectory>
-          <resources>
-            <resource>
-               <directory>def</directory>
-            </resource>
-          </resources>
-        </configuration>
-      </execution>
-      <execution>
-        <id>copy-resources-2</id>
-        <phase>validate</phase>
-        <goals>
-          <goal>copy-resources</goal>
-        </goals>
-        <configuration>
-          <outputDirectory>${basedir}/target/abc</outputDirectory>
-          <resources>
-            <resource>
-                <directory>abc</directory>
-                
-            </resource>
-          </resources>
-        </configuration>
-      </execution>
-    </executions>
-  </plugin>
-  
-  
-  <plugin>
-  <artifactId>maven-clean-plugin</artifactId>
-	<version>3.0.0</version>
-	 <goals>
-          <goal>maven-build-plugin</goal>
-        </goals>
-	 <configuration>
-	<filesets>
-        <fileset>
-		<!-- put dir to do task -->
-          <directory>${basedir}/abc</directory>
-          <includes>
-            <include>*.*</include>
-			 
-          </includes>
-		  <excludes>
-            <exclude>pom.xml</exclude>
-			<exclude>aditya profile.*</exclude>
-			</excludes>
-		  <followSymlinks>false</followSymlinks>
-		</fileset>
-        </filesets>
-		 </configuration>
-		 </plugin>
-		 
-		 <plugin>
-    <groupId>git-hub</groupId>
-    <artifactId>newcode</artifactId>
-    <version>newcode</version>
-    <executions>
+   <executions>
         <execution>
-            <id>download</id>
-            <phase>build</phase>
+            <id>copy-resources</id>
+			<phase>validate</phase>
             <goals>
-                <goal>wget</goal>
+               <goal>copy-resources</goal>
             </goals>
             <configuration>
-                <url>https://github.com/tietoAdi/cloud_ab/blob/master/abc/newcode</url>
-                <unpack>true</unpack>
-                <outputDirectory>${basedir}/target/abv</outputDirectory>
-                
-            </configuration>
+               <outputDirectory>${basedir}/target/ear</outputDirectory>
+               <resources> 
+					 <resource>
+                        <directory>${basedir}/target/</directory>
+						<includes>
+						<include>cloud_ab-2.0-version.ear</include>
+						</includes>
+                       </resource>
+               </resources>              
+            </configuration>            
         </execution>
-    </executions>
+     </executions>
 </plugin>
-
+	
+        
+   
 
 	</plugins>
  </build>
- 
   
  
 </project>
