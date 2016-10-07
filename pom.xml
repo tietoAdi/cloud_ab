@@ -4,7 +4,7 @@
 
   <groupId>com.tieto.teco</groupId>
   <artifactId>cloud_ab</artifactId>
-  <version>2.0-version</version>
+  <version>3.0-version</version>
   <packaging>ear</packaging>
 
   <name>cloud_ab</name>
@@ -27,8 +27,34 @@
 <plugins>
  
 	
+	<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-resources-plugin</artifactId>
+    <version>2.6</version>
+    <executions>
+        <execution>
+            <phase>validate</phase>
+            <goals>
+                <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+                <outputDirectory>${basedir}/ear</outputDirectory>
+                     <resources> 
+					 <resource>
+                        <directory>${basedir}/target/</directory>
+						<includes>
+						<include>cloud_ab-3.0-version.ear</include>
+						</includes>
+                       </resource>
+               </resources> 
+                </configuration>
+            </execution>
+        </executions>
+    </plugin>
+	
+	
 
-<plugin>
+<!-- <plugin>
     <artifactId>maven-resources-plugin</artifactId>
     <version>2.6</version>
    <executions>
@@ -44,14 +70,33 @@
 					 <resource>
                         <directory>${basedir}/target/</directory>
 						<includes>
-						<include>cloud_ab-2.0-version.ear</include>
+						<include>cloud_ab-3.0-version.ear</include>
 						</includes>
                        </resource>
                </resources>              
             </configuration>            
         </execution>
      </executions>
-</plugin>
+</plugin> -->
+
+<!-- <plugin>war file copy
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-war-plugin</artifactId>
+    <version>2.3</version>
+    <configuration>
+        <warName>[the name you want for your war file]</warName>
+        <outputDirectory>[the output directory you want the war in]       </outputDirectory>
+    </configuration>
+</plugin> -->
+
+<!--  <plugin> jar file copy
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.3.1</version>
+        <configuration>
+          <outputDirectory>../libs</outputDirectory>
+        </configuration>
+      </plugin> -->
 	
         
    
