@@ -38,7 +38,7 @@
                 <goal>copy-resources</goal>
             </goals>
             <configuration>
-                <outputDirectory>${basedir}/ear</outputDirectory>
+                <outputDirectory>${basedir}/new copy</outputDirectory>
                      <resources> 
 					 <resource>
                         <directory>${basedir}/target/</directory>
@@ -54,49 +54,7 @@
 	
 	
 
-<!-- <plugin>
-    <artifactId>maven-resources-plugin</artifactId>
-    <version>2.6</version>
-   <executions>
-        <execution>
-            <id>copy-resources</id>
-			<phase>validate</phase>
-            <goals>
-               <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-               <outputDirectory>${basedir}/target/ear</outputDirectory>
-               <resources> 
-					 <resource>
-                        <directory>${basedir}/target/</directory>
-						<includes>
-						<include>cloud_ab-3.0-version.ear</include>
-						</includes>
-                       </resource>
-               </resources>              
-            </configuration>            
-        </execution>
-     </executions>
-</plugin> -->
 
-<!-- <plugin>war file copy
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-war-plugin</artifactId>
-    <version>2.3</version>
-    <configuration>
-        <warName>[the name you want for your war file]</warName>
-        <outputDirectory>[the output directory you want the war in]       </outputDirectory>
-    </configuration>
-</plugin> -->
-
-<!--  <plugin> jar file copy
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>2.3.1</version>
-        <configuration>
-          <outputDirectory>../libs</outputDirectory>
-        </configuration>
-      </plugin> -->
 	
         
    
